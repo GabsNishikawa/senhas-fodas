@@ -1,187 +1,203 @@
-/* Importa duas fontes do Google Fonts: 
-   - 'Roboto' (sem serifa) para textos gerais
-   - 'Roboto Mono' (monoespaçada) para áreas de senha e títulos técnicos */
+/* Importa duas fontes do Google Fonts:
+   - 'Roboto': fonte sem serifa, para textos comuns
+   - 'Roboto Mono': monoespaçada, ótima para senhas e conteúdo técnico */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
-/* Declaração de variáveis CSS para facilitar manutenção do tema */
-:root{
-    --branco: white;                             /* Cor de texto principal */
-    --cor-de-fundo: #00162E;                     /* Cor de fundo da página */
-    --fundo-senha: #00244D;                      /* Fundo da área de senha */
-    --fundo-texto: #001E40;                      /* Fundo de caixas com parâmetros */
-    --borda: #0075FF;                            /* Cor de bordas e destaque */
-    --roboto: 'Roboto', sans-serif;              /* Fonte principal */
-    --roboto-mono: 'Roboto Mono', monospace;     /* Fonte usada para senha/títulos */
+/* Define variáveis CSS no seletor :root (equivalente ao <html>)
+   Isso facilita a manutenção de cores e fontes em toda a página */
+:root {
+    --branco: white;                             /* Branco: usado para textos principais */
+    --cor-de-fundo: #00162E;                     /* Azul escuro: fundo da página */
+    --fundo-senha: #00244D;                      /* Azul intermediário: fundo da área da senha */
+    --fundo-texto: #001E40;                      /* Azul escuro: fundo dos blocos de parâmetros */
+    --borda: #0075FF;                            /* Azul vibrante: usado em bordas e destaques */
+    --roboto: 'Roboto', sans-serif;              /* Fonte geral da interface */
+    --roboto-mono: 'Roboto Mono', monospace;     /* Fonte monoespaçada, usada para senha */
 }
 
-/* Define peso de fonte padrão para todos os elementos da página */
-*{
-    font-weight: 400; /* Peso regular */
+/* Aplica peso padrão para todos os elementos da página */
+* {
+    font-weight: 400;
 }
 
-/* Estilização geral do body da página */
-body{
-    color: var(--branco);                         /* Texto branco */
-    background-color: var(--cor-de-fundo);        /* Fundo escuro */
-    font-family: var(--roboto);                   /* Fonte principal */
+/* Define estilos básicos para o <body> da página HTML:
+   - Define fonte principal
+   - Aplica cores de fundo e texto */
+body {
+    color: var(--branco);                           /* Cor dos textos */
+    background-color: var(--cor-de-fundo);          /* Cor de fundo da página */
+    font-family: var(--roboto);                     /* Fonte principal */
 }
 
-/* Estilo do título principal (ex: “Gerador de Senhas”) */
-.titulo-principal{
-    font-family: var(--roboto-mono);              /* Fonte técnica monoespaçada */
-    font-size: 32px;                               /* Tamanho grande */
+/* Classe usada em um <h1> ou <h2> com o título do projeto */
+.titulo-principal {
+    font-family: var(--roboto-mono);                /* Usada para dar um ar técnico/codificado */
+    font-size: 32px;                                 /* Tamanho grande */
 }
 
-/* Estilo de subtítulos (ex: “Parâmetros da senha”) */
-.titulo-secundario{
-    font-size: 24px;                               /* Tamanho médio */
+/* Subtítulos, provavelmente dentro de <h2> ou <h3> */
+.titulo-secundario {
+    font-size: 24px;                                 /* Um pouco menor que o título principal */
 }
 
-/* Container do título centralizado */
-.conteudo-titulo{
-    text-align: center;                           /* Centraliza texto */
-    margin-top: 80px;                             /* Espaço acima do título */
+/* Container para centralizar e posicionar o título */
+.conteudo-titulo {
+    text-align: center;                             /* Centraliza horizontalmente */
+    margin-top: 80px;                               /* Espaço superior */
 }
 
-/* Área onde a senha gerada é exibida */
-.conteudo-senha{
-    margin-top: 80px;                             /* Distância do título acima */
-    background: var(--fundo-senha);               /* Fundo azul escuro */
-    padding: 24px;                                /* Espaçamento interno */
-    border-bottom: 6px solid var(--borda);        /* Barra inferior azul-claro */
+/* Área que exibe a senha gerada. Provavelmente uma <div> */
+.conteudo-senha {
+    margin-top: 80px;                               /* Espaço do topo */
+    background: var(--fundo-senha);                 /* Fundo azul intermediário */
+    padding: 24px;                                  /* Espaçamento interno */
+    border-bottom: 6px solid var(--borda);          /* Linha de destaque inferior */
 }
 
-/* Campo de entrada onde aparece a senha gerada */
-#campo-senha{
-    background-color: var(--fundo-senha);         /* Fundo igual ao container */
-    border: none;                                 /* Sem borda */
-    color: var(--branco);                         /* Texto branco */
-    font-family: var(--roboto-mono);              /* Fonte monoespaçada */
-    font-size: 40px;                              /* Tamanho grande */
-    width: 70%;                                   /* Ocupa 70% da largura disponível */
+/* Campo de input (tipo="text") com a senha gerada */
+#campo-senha {
+    background-color: var(--fundo-senha);           /* Mesma cor do container */
+    border: none;                                   /* Sem bordas */
+    color: var(--branco);                           /* Texto branco */
+    font-family: var(--roboto-mono);                /* Fonte técnica */
+    font-size: 40px;                                /* Texto bem visível */
+    width: 70%;                                     /* Responsivo e centralizado */
 }
 
-/* Remove o contorno azul ao clicar no input */
-#campo-senha:focus{
+/* Remove borda azul padrão ao focar no campo */
+#campo-senha:focus {
     outline: none;
 }
 
-/* Container que centraliza o conteúdo da página */
-.conteudo{
-    max-width: 1200px;                            /* Limita largura máxima */
-    margin: 0 auto;                               /* Centraliza horizontalmente */
+/* Container que envolve todo o conteúdo da página.
+   Geralmente é uma <div> com classe .conteudo */
+.conteudo {
+    max-width: 1200px;                              /* Limita a largura para melhor leitura */
+    margin: 0 auto;                                 /* Centraliza o conteúdo horizontalmente */
 }
 
-/* Blocos que contêm cada conjunto de parâmetros */
-.parametro{
-    background-color: var(--fundo-texto);         /* Fundo azul escuro */
-    border: 2px solid var(--borda);               /* Borda azul clara */
-    margin-top: 32px;                             /* Espaço acima do bloco */
-    padding: 24px;                                /* Espaçamento interno */
+/* Cada bloco de parâmetros (como tipo de caracteres, tamanho, etc.)
+   Provavelmente uma <div class="parametro"> */
+.parametro {
+    background-color: var(--fundo-texto);           /* Fundo escuro */
+    border: 2px solid var(--borda);                 /* Borda de destaque */
+    margin-top: 32px;
+    padding: 24px;
 }
 
-/* Título da seção de parâmetros (com fonte técnica) */
-.parametro-titulo{
-    font-family: var(--roboto-mono);              /* Fonte monoespaçada */
-    font-size: 28px;                               /* Tamanho intermediário */
+/* Título interno de cada seção, geralmente em <h3> */
+.parametro-titulo {
+    font-family: var(--roboto-mono);                /* Monoespaçada para diferenciar */
+    font-size: 28px;
 }
 
-/* Subtítulo específico da área de controle de senha */
-.parametro-senha__titulo{
-    font-size:24px;                               
+/* Subtítulo de controle de senha (ex: “Tamanho da senha”) */
+.parametro-senha__titulo {
+    font-size: 24px;
 }
 
-/* Container de colunas com controle de tamanho e checkboxes */
-.parametro-coluna__senha{
-    display: flex;                                /* Usa layout flexível */
-    flex-direction: column;                       /* Coluna por padrão */
-    justify-content: center;                      /* Centraliza verticalmente */
+/* Coluna de parâmetros com layout flexível.
+   Pode conter os botões e os checkboxes */
+.parametro-coluna__senha {
+    display: flex;
+    flex-direction: column;                         /* Coluna em telas pequenas */
+    justify-content: center;
 }
 
-/* Caixa que contém os botões de aumentar/diminuir senha */
-.parametro-senha{
-    width: 50%;                                   /* Ocupa metade da largura */
-    margin: 0 auto;                               /* Centraliza horizontalmente */
+/* Container da área de controle de tamanho da senha */
+.parametro-senha {
+    width: 50%;                                     /* Reduzido para manter foco */
+    margin: 0 auto;                                 /* Centraliza */
 }
 
-/* Linha com os botões de "+" e "-" */
-.parametro-senha-botoes{
-    display: flex;                                /* Alinha os botões lado a lado */
-    justify-content: center;                      /* Centraliza os botões */
+/* Linha horizontal com botões + e - */
+.parametro-senha-botoes {
+    display: flex;
+    justify-content: center;
 }
 
-/* Botões "+" e "-" para ajustar o tamanho da senha */
-.parametro-senha__botao{
-    background-color: var(--fundo-texto);         /* Fundo escuro */
-    color: var(--branco);                         /* Texto branco */
-    border: 2px solid var(--borda);               /* Borda azul clara */
-    padding: 24px;                                /* Área clicável grande */
-    font-size: 24px;                              /* Texto grande */
-    cursor: pointer;                              /* Mostra cursor de clique */
+/* Botões + e - para controle do tamanho da senha */
+.parametro-senha__botao {
+    background-color: var(--fundo-texto);
+    color: var(--branco);
+    border: 2px solid var(--borda);
+    padding: 24px;
+    font-size: 24px;
+    cursor: pointer;
 }
 
-/* Exibe o número atual do tamanho da senha */
-.parametro-senha__texto{
-    padding: 24px;                                /* Espaçamento interno */
-    border-top: 2px solid var(--borda);           /* Borda superior azul clara */
-    border-bottom: 2px solid var(--borda);        /* Borda inferior azul clara */
-    margin: 0;                                    
-    font-size: 24px;                              /* Texto médio-grande */
+/* Número que mostra visualmente o tamanho atual da senha */
+.parametro-senha__texto {
+    padding: 24px;
+    border-top: 2px solid var(--borda);
+    border-bottom: 2px solid var(--borda);
+    margin: 0;
+    font-size: 24px;
 }
 
-/* Rótulos dos checkboxes */
-label{
-    font-size: 20px;                              /* Tamanho legível */
+/* Estiliza o texto de <label> dos checkboxes */
+label {
+    font-size: 20px;
 }
 
-/* Estilo dos checkboxes */
-.checkbox{
-    width: 20px;                                  /* Largura do checkbox */
-    height: 20px;                                 /* Altura do checkbox */
-    cursor: pointer;                              /* Cursor de clique */
+/* Estilo visual dos checkboxes (input do tipo checkbox) */
+.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
-/* Barra base que representa o espaço total da força da senha */
-.barra{
-    background-color: var(--fundo-senha);         /* Fundo escuro */
-    height: 30px;                                 /* Altura da barra */
-    width: 100%;                                  /* Largura total */
+/* Faixa de fundo da barra de força da senha */
+.barra {
+    background-color: var(--fundo-senha);
+    height: 30px;
+    width: 100%;
 }
 
-/* Elemento colorido que indica visualmente a força da senha */
-.forca{
-    height: 30px;                                 /* Mesma altura da barra */
+/* Indicador colorido sobre a barra que mostra a força */
+.forca {
+    height: 30px;
     position: relative;
-    bottom: 30px;                                 /* Sobe para sobrepor a barra */
+    bottom: 30px;                                    /* Faz com que a barra colorida fique sobre a base */
 }
 
-/* Nível de força fraca: 25% da barra, cor vermelha */
-.fraca{
+/* Barra vermelha: senha fraca (entropia baixa) */
+.fraca {
     width: 25%;
-    background-color: #E71B32; 
+    background-color: #E71B32;
 }
 
-/* Nível médio: 50% da barra, cor amarela */
-.media{
+/* Barra amarela: senha média (entropia razoável) */
+.media {
     background-color: #FAF408;
     width: 50%;
 }
 
-/* Nível forte: 100% da barra, cor verde */
-.forte{
+/* Barra verde: senha forte (entropia alta) */
+.forte {
     background-color: #00FF85;
     width: 100%;
 }
 
-/* Linha com dois textos nas laterais (ex: “Força da senha” e entropia) */
-.parametro-senha-textos{
-    display: flex;                                /* Layout em linha */
-    justify-content: space-between;               /* Espaço entre os textos */
+/* Linha com duas informações: ex: “Força da senha” e entropia estimada */
+.parametro-senha-textos {
+    display: flex;
+    justify-content: space-between;                 /* Um texto em cada lado */
 }
 
-/* Responsividade: em telas médias ou maiores (ex: tablets) */
+/* Responsividade: altera o layout em telas maiores que 768px
+   Exemplo: transforma coluna de botões/checkboxes em linha */
 @media screen and (min-width: 768px) {
-    .parametro-coluna__senha{
-        flex-direction: row;                      /* Em vez de coluna, vira linha */
+    .parametro-coluna__senha {
+        flex-direction: row;
     }
 }
+Se quiser, posso também gerar uma visualização ou protótipo do HTML com todos os elementos estilizados com base neste CSS. Deseja isso?
+
+
+
+
+
+
+
+
