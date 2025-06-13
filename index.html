@@ -2,21 +2,42 @@
 <html lang="pt-br">
 
 <head>
+    <!--A tag meta em HTML é um elemento essencial para fornecer informações sobre um documento HTML, não para serem exibidas visualmente na página, mas sim para serem interpretadas por navegadores, motores de busca e outras ferramentas--> 
+   <!--A tag charset em HTML serve para especificar a codificação de caracteres utilizada em um documento-->
+   <!--A tag name é um atributo HTML usado principalmente para identificar elementos, especialmente campos de formulário (<input>, <select>, <textarea>, etc.), e também para elementos <meta> e <iframe>. O name define um nome único para um elemento, permitindo que ele seja identificado e manipulado em JavaScript e que seja usado para identificar os dados enviados do formulário para o servidor. -->
+   <!--A tag content em HTML serve como um atributo para definir o conteúdo de um elemento-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--A tag title em HTML serve para definir o título do documento, que é exibido na barra de título do navegador ou na aba da página-->
     <title>Gerador de senha</title>
+    <!--A tag link em HTML é utilizada para estabelecer uma relação entre o documento HTML atual e um recurso externo, geralmente uma folha de estilo-->
+    <!--No HTML, o atributo rel é usado em links e ligações para especificar o relacionamento entre a página atual e a página vinculada. Por exemplo, rel="canonical" indica que outra página representa o conteúdo da página atual. rel="stylesheet" indica que o arquivo vinculado é um arquivo CSS que define o estilo da página. -->
+   <!--O atributo href (Hypertext REFerence) tem a finalidade de definir a URL (Uniform Resource Locator) do link que o elemento <a> (âncora) representa. Em outras palavras, ele especifica para onde o navegador deve navegar quando o usuário clica no link-->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!--A tag section em HTML serve para definir uma seção ou bloco de conteúdo em uma página web, permitindo estruturar e organizar a informação de forma lógica e semântica-->
+  <!--O atributo class em HTML serve para agrupar elementos e aplicá-los a estilos CSS e JavaScript. Permite a seleção de elementos específicos com base em um nome de classe, facilitando a reutilização de estilos e a manipulação do DOM. -->
     <section class="conteudo">
+        <!--A tag div em HTML serve como um contêiner genérico para agrupar e organizar conteúdo em uma página da web.-->
         <div class="conteudo-titulo">
+            <!--A tag img em HTML serve para inserir imagens em uma página web-->
+            <!--A tag alt em HTML, ou texto alternativo, serve para fornecer uma descrição da imagem caso esta não possa ser carregada, ou para facilitar a compreensão da imagem para pessoas com deficiência visual que utilizam leitores de tela-->
+         <!--A tag src (de source, ou fonte) é um atributo utilizado em algumas tags HTML para especificar o local (URL) de um recurso externo, como uma imagem, vídeo, áudio ou script. Ele indica ao navegador onde buscar o conteúdo a ser carregado e exibido na página. -->
             <img src="unlock.svg" alt="cadeado fechado">
+            <!--A tag H2 no HTML serve para criar subtítulos em uma página web, organizando e estruturando o conteúdo de forma hierárquica. Segundo o site, as tags H2 são usadas para destacar informações importantes e encabeçar subseções na página-->
             <h2 class="titulo-principal">Gerador de senhas</h2>
+            <!--A tag <h3> (h3) em HTML serve para criar subtítulos de nível secundário dentro de um documento, geralmente usados como subseções de um tópico principal definido por uma tag <h2> (h2). Ela ajuda a estruturar a página e facilitar a leitura para o usuário, além de ser importante para o SEO (Search Engine Optimization) e para a acessibilidade. -->
             <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
         </div>
         <div class="conteudo-senha">
+            <!--A tag label em HTML serve para definir uma legenda ou rótulo para um elemento de formulário, como um input de texto, caixa de seleção, botão de rádio, etc. Ela melhora a experiência do usuário, tornando mais fácil identificar e interagir com os elementos do formulário. -->
+           <!--A tag "for" em HTML, usada em combinação com a tag label, estabelece uma ligação entre a etiqueta de rótulo e o elemento de formulário (geralmente um input) que está a identificar. -->
             <label for="senha">Senha</label>
+            <!--A tag input em HTML serve para criar campos de entrada onde os utilizadores podem inserir dados, como texto, números, senhas, datas, etc. É um elemento fundamental para construir formulários e outras interações que requerem a recolha de dados do utilizador. -->
+            <!--A tag "type" em HTML, especialmente nos elementos <input> e <link>, serve para especificar o tipo de conteúdo ou elemento a ser exibido ou importado. No caso de <input>, define o tipo de campo de entrada (texto, número, data, etc.). Em <link>, indica o tipo de conteúdo importado, como CSS ou scripts. -->
+            <!--O atributo id em HTML serve para identificar de forma única um elemento dentro de uma página web. É usado para localizar um elemento específico, seja para estilizar com CSS ou para manipular com JavaScript-->
+            <!--A tag readonly em HTML serve para tornar um campo de formulário (como <input>, <textarea>, ou <select>) somente leitura, ou seja, não editável pelo usuário. Isso significa que o usuário pode ver o valor do campo, selecionar e copiar o texto, mas não pode alterá-lo. -->
             <input name="senha" type="text" id="campo-senha" readonly>
         </div>
         <div class="parametro">
